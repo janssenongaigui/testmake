@@ -24,6 +24,10 @@ getjenkins:
 	sudo apt-get update
 	sudo apt-get install -y jenkins # 	plugins to install: blue ocean, pipeline aws
 
+getpip:
+	sudo apt-get update
+	sudo apt install python-pip
+
 
 
 # install:
