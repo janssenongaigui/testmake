@@ -1,6 +1,6 @@
-installdocker:
+getdocker:
 	sudo apt-get update
-	sudo apt-get install \
+	sudo apt-get install -y \
 		apt-transport-https \
 		ca-certificates \
 		curl \
@@ -13,7 +13,11 @@ installdocker:
 		bionic \
 		stable"
 	sudo apt-get update
-	sudo apt-get install docker-ce docker-ce-cli containerd.io
+	sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+getjenkins:
+	sudo apt-get update
+
 
 
 # install:
