@@ -92,6 +92,8 @@ uploaddockerimage:
 	sudo docker tag app:blue janssenongaigui/capstone:blue
 	sudo docker push janssenongaigui/capstone:blue
 
+setkubectlcontext:
+	kubectl config use-context arn:aws:eks:us-east-1:546547842218:cluster/capstonecluster
 
 
 
