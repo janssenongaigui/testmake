@@ -88,7 +88,8 @@ builddockerimage:
 
 uploaddockerimage:
 # 	Blue version
-	dockerpath="janssenongaigui/htmldemo"
+	dockerpath="janssenongaigui/capstone"
+	docker tag 882243505ddc janssenongaigui/htmldemo:latest
 
 
 
