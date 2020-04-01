@@ -27,7 +27,7 @@ pipeline {
 									dockerImage.push()
 								}
                         }
-                }
+                } 
                 stage('Set Cluster Context') {
                         steps {
                                 sh 'make setkubectlcontext'
