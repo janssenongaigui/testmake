@@ -75,7 +75,7 @@ getlint:
 	sudo mv hadolint /usr/local/bin
 	sudo apt install -y tidy
 
-createenv:
+install:
 	pip install -r requirements.txt
 
 lint:
