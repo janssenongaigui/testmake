@@ -69,7 +69,7 @@ createcluster:
 		--managed
 
 updatekubeconfig:
-	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
+	aws eks --region us-west-2 update-kubeconfig --name capstoneclusterblue
 
 getlint:
 	sudo apt-get update
@@ -88,11 +88,9 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	# 	Blue version
 	sudo docker build --tag=app:blue .
 
 uploaddockerimage:
-	# 	Blue version
 	sudo docker tag app:blue janssenongaigui/capstone:blue
 	sudo docker push janssenongaigui/capstone:blue
 
