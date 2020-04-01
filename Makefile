@@ -93,7 +93,7 @@ builddockerimage:
 
 uploaddockerimage:
 	# 	Green version
-	sudo docker tag app:blue janssenongaigui/capstone:green
+	sudo docker tag app:green janssenongaigui/capstone:green
 	sudo docker push janssenongaigui/capstone:green
 
 setkubectlcontext:
