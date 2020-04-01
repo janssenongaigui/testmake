@@ -1,3 +1,7 @@
+################
+# BLUE VERSION #
+################
+
 setupproj:
 	sudo mkdir ~/myproj
 	cd ~/myproj
