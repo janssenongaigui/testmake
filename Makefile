@@ -53,6 +53,19 @@ getawsiamauthenticator:
 	sudo chmod 755 aws-iam-authenticator
 	sudo mv aws-iam-authenticator /usr/local/bin
 
+createcluster:
+	eksctl create cluster \
+		--name capstonecluster \
+		--region us-west-2 \
+		--nodegroup-name standard-workers \
+		--node-type t3.medium \
+		--nodes 3 \
+		--nodes-min 1 \
+		--nodes-max 4 \
+		--ssh-access \
+		--ssh-public-key capstone.pub \
+		--managed
+
 updatekubeconfig:
 	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
 
