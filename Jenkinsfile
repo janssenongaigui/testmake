@@ -36,7 +36,7 @@ pipeline {
                         steps {
                                 withAWS(region:'us-west-2',credentials:'aws-cred') {
 									sh '''
-										make setkubectlcontext
+										eksctl
 									'''
 								}
                         }
