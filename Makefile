@@ -75,7 +75,6 @@ getlint:
 	sudo mv hadolint /usr/local/bin
 	sudo apt install -y tidy
 
-
 createenv:
 	python3 -n venv ~/.venv
 	source ~/.venv/bin/activate
