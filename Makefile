@@ -96,6 +96,7 @@ uploaddockerimage:
 	docker push janssenongaigui/capstone:blue
 
 setkubectlcontext:
+	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
 	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
 
 createreplicationcontroller:
