@@ -1,5 +1,5 @@
 ##################
-## BLUE VERSION ##
+## GREEN VERSION ##
 ##################
 
 setupproj:
@@ -88,22 +88,22 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	# 	Blue version
-	sudo docker build --tag=app:blue .
+	# 	Green version
+	sudo docker build --tag=app:green .
 
 uploaddockerimage:
-	# 	Blue version
-	sudo docker tag app:blue janssenongaigui/capstone:blue
-	sudo docker push janssenongaigui/capstone:blue
+	# 	Green version
+	sudo docker tag app:blue janssenongaigui/capstone:green
+	sudo docker push janssenongaigui/capstone:green
 
 setkubectlcontext:
 	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
 
 createreplicationcontroller:
-	kubectl apply -f ./blue-controller.json
+	kubectl apply -f ./green-controller.json
 
 createservice:
-	kubectl apply -f ./blue-service.json
+	kubectl apply -f ./green-service.json
 
 
 # install:
