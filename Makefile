@@ -95,6 +95,8 @@ uploaddockerimage:
 setkubectlcontext:
 	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
 
+applykubectl:
+	kubectl apply -f ./blue-controller.json
 
 
 # install:
