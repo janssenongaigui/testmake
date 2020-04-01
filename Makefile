@@ -67,6 +67,13 @@ createcluster:
 updatekubeconfig:
 	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
 
+getlint:
+	sudo apt-get update
+	sudo apt install pylint
+	wget -O hadolint "https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64"
+	sudo chmod 755 hadolint
+	sudo mv hadolint /usr/local/bin
+
 
 # install:
 # 	pip install --upgrade pip &&\
