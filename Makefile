@@ -105,6 +105,8 @@ createreplicationcontroller:
 createservice:
 	kubectl apply -f ./green-service.json
 
+obtainurl:
+	kubectl get services -o wide
 
 # install:
 # 	pip install --upgrade pip &&\
