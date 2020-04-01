@@ -1,4 +1,9 @@
 pipeline {
+		environment {
+			registry = "janssenongaigui/capstone:blue"
+			registryCredential = 'dockerhub'
+			dockerImage = ''
+		}
 		agent any                                                                                                                                                                                                                                                       
         stages {
 				stage('Setup') {                                                                                                                                                                                                                                          
@@ -13,12 +18,14 @@ pipeline {
                 }                                                                                                                                                                                                                                                        
                 stage('Build Docker Image') {                                                                                                                                                                                                                            
                         steps {                                                                                                                                                                                                                                          
-                                sh 'make builddockerimage'                                                                                                                                                                                                               
-                        }                                                                                                                                                                                                                                                
+							dockerImage = docker.build registry
+                        }
                 }                                                                                                                                                                                                                                                        
                 stage('Upload Docker Image') {                                                                                                                                                                                                                           
                         steps {                                                                                                                                                                                                                                          
-                                sh 'make uploaddockerimage'                                                                                                                                                                                                              
+                                docker.withRegistry('', registryCredential ) {
+									dockerImage.push()
+								}
                         }                                                                                                                                                                                                                                                
                 }                                                                                                                                                                                                                                                        
                 stage('Set Cluster Context') {                                                                                                                                                                                                                           
