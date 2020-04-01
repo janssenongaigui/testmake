@@ -17,16 +17,20 @@ pipeline {
                         }
                 }
                 stage('Build Docker Image') {
-                        script {
-							dockerImage = docker.build(registry)
+                        step {
+							script {
+								dockerImage = docker.build(registry)
+							}
                         }
                 }
                 stage('Upload Docker Image') {
-                        script {
-                                docker.withRegistry('', registryCredential ) {
-									dockerImage.push()
-								}
-                        }
+						step {
+							script {
+									docker.withRegistry('', registryCredential ) {
+										dockerImage.push()
+									}
+							}
+						}
                 }
                 stage('Set Cluster Context') {
                         steps {
