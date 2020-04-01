@@ -93,7 +93,7 @@ uploaddockerimage:
 	sudo docker push janssenongaigui/capstone:blue
 
 setkubectlcontext:
-	kubectl config use-context arn:aws:eks:us-east-1:546547842218:cluster/capstonecluster
+	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
 
 
 
