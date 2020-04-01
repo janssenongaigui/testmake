@@ -73,6 +73,10 @@ getlint:
 	wget -O hadolint "https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64"
 	sudo chmod 755 hadolint
 	sudo mv hadolint /usr/local/bin
+	sudo apt install -y tidy
+
+lint:
+
 
 
 # install:
