@@ -39,11 +39,13 @@ pipeline {
                 }
                 stage('Deploy Container') {
                         steps {
-                                sh '''
-                                        make createreplicationcontroller
-                                        make createservice
-                                        make obtainurl
-                                '''
+                                withAWS(region:'us-west-2',credentials:'aws-cred') {
+									sh '''
+										make setkubectlcontext
+										make createreplicationcontroller
+										make createservice
+									'''
+								}
                         }
                 }
         }
