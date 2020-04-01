@@ -59,7 +59,7 @@ getawsiamauthenticator:
 
 createcluster:
 	eksctl create cluster \
-		--name capstonecluster \
+		--name capstoneclustergreen \
 		--region us-west-2 \
 		--nodegroup-name standard-workers \
 		--node-type t3.medium \
@@ -69,7 +69,7 @@ createcluster:
 		--managed
 
 updatekubeconfig:
-	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
+	aws eks --region us-west-2 update-kubeconfig --name capstoneclustergreen
 
 getlint:
 	sudo apt-get update
