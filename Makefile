@@ -53,6 +53,9 @@ getawsiamauthenticator:
 	sudo chmod 755 aws-iam-authenticator
 	sudo mv aws-iam-authenticator /usr/local/bin
 
+updatekubeconfig:
+	aws eks --region us-west-2 update-kubeconfig --name capstoneproject
+
 
 # install:
 # 	pip install --upgrade pip &&\
