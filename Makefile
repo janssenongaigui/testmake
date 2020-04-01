@@ -88,7 +88,7 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	sudo docker build --tag=app:blue .
+	docker build --tag=app:blue .
 
 uploaddockerimage:
 	docker tag app:blue janssenongaigui/capstone:blue
