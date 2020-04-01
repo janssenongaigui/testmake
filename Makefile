@@ -68,9 +68,6 @@ createcluster:
 		--nodes-max 4 \
 		--managed
 
-updatekubeconfig:
-	aws eks --region us-west-2 update-kubeconfig --name capstoneclustergreen
-
 getlint:
 	sudo apt-get update
 	sudo apt install -y pylint
@@ -80,6 +77,7 @@ getlint:
 	sudo apt install -y tidy
 
 install:
+	pip install --upgrade pip
 	pip install -r requirements.txt
 
 lint:
@@ -88,13 +86,14 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	sudo docker build --tag=app:green .
+	docker build --tag=app:green .
 
 uploaddockerimage:
-	sudo docker tag app:green janssenongaigui/capstone:green
-	sudo docker push janssenongaigui/capstone:green
+	docker tag app:green janssenongaigui/capstone:green
+	docker push janssenongaigui/capstone:green
 
 setkubectlcontext:
+	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
 	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstoneclustergreen
 
 createreplicationcontroller:
@@ -102,28 +101,3 @@ createreplicationcontroller:
 
 createservice:
 	kubectl apply -f ./green-service.json
-
-obtainurl:
-	kubectl get services -o wide
-
-# install:
-# 	pip install --upgrade pip &&\
-# 		pip install -r requirements.txt
-
-# test:
-# 	#python -m pytest -vv --cov=myrepolib tests/*.py
-# 	#python -m pytest --nbval notebook.ipynb
-
-# validate-circleci:
-# 	# See https://circleci.com/docs/2.0/local-cli/#processing-a-config
-# 	circleci config process .circleci/config.yml
-
-# run-circleci-local:
-# 	# See https://circleci.com/docs/2.0/local-cli/#running-a-job
-# 	circleci local execute
-
-# lint:
-# 	hadolint demos/flask-sklearn/Dockerfile
-# 	pylint --disable=R,C,W1203 demos/**/**.py
-
-# all: install lint test
