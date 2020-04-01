@@ -89,7 +89,7 @@ builddockerimage:
 uploaddockerimage:
 # 	Blue version
 	dockerpath="janssenongaigui/capstone"
-	docker tag 882243505ddc janssenongaigui/htmldemo:latest
+	docker tag 882243505ddc janssenongaigui/htmldemo:blue
 
 
 
