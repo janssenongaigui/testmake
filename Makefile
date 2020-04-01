@@ -76,6 +76,17 @@ getlint:
 	sudo apt install -y tidy
 
 lint:
+	pylint --disable=R,C,W1203 app.py
+	hadolint Dockerfile
+	tidy -q -e static/index.html
+
+builddockerimage:
+	docker build --tag=api .
+
+uploaddockerimage:
+# 	Blue version
+	dockerpath="janssenongaigui/htmldemo"
+	
 
 
 
