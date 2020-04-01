@@ -88,11 +88,11 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	sudo docker build --tag=app:blue .
+	docker build --tag=app:blue .
 
 uploaddockerimage:
-	sudo docker tag app:blue janssenongaigui/capstone:blue
-	sudo docker push janssenongaigui/capstone:blue
+	docker tag app:blue janssenongaigui/capstone:blue
+	docker push janssenongaigui/capstone:blue
 
 setkubectlcontext:
 	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
