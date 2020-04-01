@@ -84,12 +84,13 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	sudo docker build --tag=api .
+	# 	Blue version
+	sudo docker build --tag=app:blue .
 
 uploaddockerimage:
 # 	Blue version
 	dockerpath="janssenongaigui/capstone"
-	docker tag 882243505ddc janssenongaigui/htmldemo:blue
+	docker tag 882243505ddc janssenongaigui/capstone:blue
 
 
 
