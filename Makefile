@@ -54,7 +54,7 @@ getawsiamauthenticator:
 	sudo mv aws-iam-authenticator /usr/local/bin
 
 updatekubeconfig:
-	aws eks --region us-west-2 update-kubeconfig --name capstoneproject
+	aws eks --region us-west-2 update-kubeconfig --name capstonecluster
 
 
 # install:
