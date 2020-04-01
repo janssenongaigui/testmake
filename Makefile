@@ -68,9 +68,6 @@ createcluster:
 		--nodes-max 4 \
 		--managed
 
-updatekubeconfig:
-	aws eks --region us-west-2 update-kubeconfig --name capstoneclusterblue
-
 getlint:
 	sudo apt-get update
 	sudo apt install -y pylint
