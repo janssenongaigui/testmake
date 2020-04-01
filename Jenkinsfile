@@ -32,6 +32,13 @@ pipeline {
 							}
 						}
                 }
+				stage('AWS Setup') {
+                        steps {
+                                withAWS(region:'us-west-2',credentials:'aws-cred') {
+									sh 'aws --version'
+								}
+                        }
+                }
                 stage('Set Cluster Context') {
                         steps {
                                 sh 'make setkubectlcontext'
@@ -41,7 +48,9 @@ pipeline {
                         steps {
                                 withAWS(region:'us-west-2',credentials:'aws-cred') {
 									sh '''
-										sh 'aws --version'
+										make setkubectlcontext
+										make createreplicationcontroller
+										make createservice
 									'''
 								}
                         }
