@@ -44,7 +44,7 @@ pipeline {
                 }
                 stage('Deploy Container') {
                         steps {
-							sh ''''
+							sh '''
 								make createreplicationcontroller
 								make createservice
 							'''
