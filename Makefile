@@ -88,11 +88,9 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	# 	Green version
 	sudo docker build --tag=app:green .
 
 uploaddockerimage:
-	# 	Green version
 	sudo docker tag app:green janssenongaigui/capstone:green
 	sudo docker push janssenongaigui/capstone:green
 
