@@ -84,7 +84,7 @@ lint:
 	tidy -q -e static/index.html
 
 builddockerimage:
-	docker build --tag=api .
+	sudo docker build --tag=api .
 
 uploaddockerimage:
 # 	Blue version
