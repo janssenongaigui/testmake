@@ -35,7 +35,9 @@ pipeline {
 				stage('AWS Setup') {
                         steps {
                                 withAWS(region:'us-west-2',credentials:'aws-cred') {
-									sh 'aws --version'
+									sh '''
+										aws configure list
+									'''
 								}
                         }
                 }
