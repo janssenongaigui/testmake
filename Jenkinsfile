@@ -32,7 +32,7 @@ pipeline {
 							}
 						}
                 }
-				stage('AWS Setup') {
+				stage('Set Cluster Context') {
                         steps {
                                 withAWS(region:'us-west-2',credentials:'aws-cred') {
 									sh 'aws eks --region us-west-2 update-kubeconfig --name capstonecluster'
@@ -40,20 +40,10 @@ pipeline {
 								}
                         }
                 }
-                stage('Set Cluster Context') {
-                        steps {
-                                sh 'make setkubectlcontext'
-                        }
-                }
                 stage('Deploy Container') {
                         steps {
-                                withAWS(region:'us-west-2',credentials:'aws-cred') {
-									sh '''
-										make setkubectlcontext
-										make createreplicationcontroller
-										make createservice
-									'''
-								}
+							make createreplicationcontroller
+							make createservice
                         }
                 }
         }
