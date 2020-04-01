@@ -36,7 +36,7 @@ getawscli:
 	sudo ./aws/install
 
 geteksctl:
-	curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.16.0-rc.1/eksctl_Linux_amd64.tar.gz"
+	curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.16.0-rc.1/eksctl_Linux_amd64.tar.gz" | tar xz -C .
 	sudo mv eksctl /usr/local/bin
 
 
