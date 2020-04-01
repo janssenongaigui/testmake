@@ -80,6 +80,7 @@ getlint:
 	sudo apt install -y tidy
 
 install:
+	pip install --upgrade pip
 	pip install -r requirements.txt
 
 lint:
