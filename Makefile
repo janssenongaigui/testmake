@@ -39,7 +39,7 @@ geteksctl:
 	curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.16.0-rc.1/eksctl_Linux_amd64.tar.gz" | tar xz -C .
 	sudo mv eksctl /usr/local/bin
 
-get kubectl:
+getkubectl:
 	curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
 	sudo mv kubectl /usr/local/bin
 
