@@ -75,6 +75,12 @@ getlint:
 	sudo mv hadolint /usr/local/bin
 	sudo apt install -y tidy
 
+
+createenv:
+	python3 -n venv ~/.venv
+	source ~/.venv/bin/activate
+	pip install -r requirements.txt
+
 lint:
 	pylint --disable=R,C,W1203 app.py
 	hadolint Dockerfile
@@ -86,7 +92,7 @@ builddockerimage:
 uploaddockerimage:
 # 	Blue version
 	dockerpath="janssenongaigui/htmldemo"
-	
+
 
 
 
