@@ -17,14 +17,14 @@ pipeline {
                         }
                 }
                 stage('Build Docker Image') {
-                        step {
+                        steps {
 							script {
 								dockerImage = docker.build(registry)
 							}
                         }
                 }
                 stage('Upload Docker Image') {
-						step {
+						steps {
 							script {
 									docker.withRegistry('', registryCredential ) {
 										dockerImage.push()
