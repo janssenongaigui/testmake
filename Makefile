@@ -41,6 +41,7 @@ geteksctl:
 
 getkubectl:
 	curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
+	sudo chmod 755 kubectl
 	sudo mv kubectl /usr/local/bin
 
 
