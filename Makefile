@@ -95,7 +95,7 @@ uploaddockerimage:
 	sudo docker push janssenongaigui/capstone:green
 
 setkubectlcontext:
-	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster
+	kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstoneclustergreen
 
 createreplicationcontroller:
 	kubectl apply -f ./green-controller.json
