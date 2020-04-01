@@ -34,9 +34,8 @@ pipeline {
                 }
 				stage('AWS Setup') {
                         steps {
-                                withAWS(region:'us-west-2',credentials:'aws-cred') {
-									sh 'kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster'
-								}
+							sh 'aws eks --region us-west-2 update-kubeconfig --name capstonecluster'
+							sh 'kubectl config use-context arn:aws:eks:us-west-2:180552701451:cluster/capstonecluster'
                         }
                 }
                 stage('Set Cluster Context') {
